@@ -1,0 +1,9 @@
+# pnpm 工作区配置
+verify-deps-before-run: false
+
+# 允许 esbuild 运行安装脚本（Vite 依赖）
+onlyBuiltDependencies:
+  - esbuild
+
+allowBuilds:
+  esbuild: set this to true or false
