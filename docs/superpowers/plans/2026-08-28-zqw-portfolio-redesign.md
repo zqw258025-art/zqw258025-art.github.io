@@ -1692,3 +1692,46 @@ git commit -m "feat: 组装 ZQW 新版单页站点并移除旧组件"
 2. **Inline Execution** — 本会话内按 executing-plans 批量执行，带检查点
 
 请选择执行方式。
+
+---
+
+## Resume 追加任务（2026-08-28，已完成）
+
+> 需求来源：用户追加需求「为作品集增加 Resume/简历板块（只搭结构，不填真实内容）」。执行方式：B（先完成白色改版 13 任务，再叠加 Resume）。
+
+### Task 14: 极简路径路由（无新依赖）
+
+**Files:**
+- Modify: `src/main.jsx`
+- Create: `src/lib/navigate.js`
+- Modify: `src/content/site.js`（`resume` 空结构 + `aboutMe.resumeCta` + nav 增加 `RESUME`）
+
+- [x] `RouteView`：`window.location.pathname === '/resume'` 渲染 `<Resume />`，否则渲染 `<App />`；监听 `popstate`，切页回顶部
+- [x] `navigate(to)`：`history.pushState` + 派发 `popstate`，SPA 跳转
+- [x] `site.resume = { profile: null, experience: [], education: null, capabilities: [], tools: [], projects: [], contact: null }`（纯空结构，不填真实内容）
+
+### Task 15: Resume 页面框架
+
+**Files:**
+- Create: `src/pages/Resume.jsx`
+- Create: `src/pages/Resume.css`
+
+- [x] 顶栏：`ZQW.` 品牌 + `← BACK TO PORTFOLIO`（→ `/`）
+- [x] Hero：`RESUME` / `ZQW` / `UI/UX DESIGN · AI PRODUCT DESIGN · SPATIAL DESIGN`
+- [x] 7 个结构 Section：`01 / PROFILE` … `07 / CONTACT`，每个渲染 `[CONTENT PLACEHOLDER]` 占位框
+- [x] 底部再次提供 `← BACK TO PORTFOLIO`
+- [x] 视觉与主站一致：白底 / 墨黑 / 电光蓝 / Space Grotesk / JetBrains Mono / 发丝线 / Editorial Grid / 大留白
+- [x] 响应式：Desktop / Tablet / Mobile（三视口无横向滚动、无控制台错误）
+- [x] 复用 `Reveal` 渐显；暂不制作 PDF 下载按钮
+
+### Task 16: 入口 + 验证
+
+**Files:**
+- Modify: `src/components/Nav.jsx`（RESUME 路由链接，位于 ABOUT 与 CONTACT 之间）
+- Modify: `src/components/AboutMe.jsx`（底部 `VIEW FULL RESUME ↗` 轻量 CTA）
+- Create: `scripts/verify-resume.cjs`
+
+- [x] 导航：`ZQW. | WORKS LAB ABOUT RESUME CONTACT | LET'S TALK ↗`
+- [x] 首页 About Me 底部 `VIEW FULL RESUME ↗` → `/resume`；首页信息架构不变
+- [x] 验证结果：`pnpm build` 通过；`check-content.cjs` 通过；`verify.cjs` 无控制台错误/无横向滚动；`verify-resume.cjs` 三视口（1920/820/390）均无溢出、无错误、7 个占位 Section；导航流程（RESUME→/resume、BACK→/、CTA→/resume、浏览器后退→/）全部通过
+- [x] 未虚构任何教育/工作/公司/时间/项目/技能/联系方式/成果数据

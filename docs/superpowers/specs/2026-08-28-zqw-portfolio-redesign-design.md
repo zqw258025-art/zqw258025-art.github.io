@@ -197,3 +197,12 @@ Nav（吸顶毛玻璃）
 - 全部占位块在无素材时排版完整、不破版
 - 白底科技杂志风：黑白蓝、发丝线、等宽标签、大标题
 - 中文全名「张倩雯」出现在 Hero kicker（合适位置）
+
+## 9. Resume 页（追加需求，2026-08-28）
+
+- 独立页面 `/resume`，极简路径路由（无第三方依赖）
+- 只搭视觉框架与占位结构，不填真实简历内容（后续用户单独提供）
+- 导航增加 `RESUME`（位于 ABOUT 与 CONTACT 之间）；首页 About Me 底部增加轻量 CTA `VIEW FULL RESUME ↗`
+- 顶栏与底部提供 `← BACK TO PORTFOLIO`（→ `/`）
+- 7 个结构 Section：01 PROFILE / 02 EXPERIENCE / 03 EDUCATION / 04 CAPABILITIES / 05 TOOLS / 06 SELECTED PROJECTS / 07 CONTACT，均为 `[CONTENT PLACEHOLDER]`
+- 视觉与主站一致（白底/墨黑/电光蓝/等宽标签/发丝线）；暂不做 PDF 下载
