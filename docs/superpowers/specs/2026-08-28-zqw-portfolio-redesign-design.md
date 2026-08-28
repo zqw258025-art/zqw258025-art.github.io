@@ -99,7 +99,7 @@ Nav（吸顶毛玻璃）
 ### 4.9 Contact
 - 标签：`07 / CONTACT`
 - 大标题：`LET'S CREATE SOMETHING MEANINGFUL.`（`MEANINGFUL` 蓝色强调）
-- 中文段落 + 大号 Email 链接 + GitHub + 社交平台
+- 中文段落 + 联系方式列表（邮箱 / 微信 / QQ / 电话）+ GitHub + 社交平台
 - 页脚：`© 2026 ZQW · Designed & Built by ZQW` + 回到顶部
 
 ## 5. 内容文案（草稿，待用户审阅）
@@ -161,7 +161,10 @@ Nav（吸顶毛玻璃）
 - 标签：`07 / CONTACT`
 - 标题：`LET'S CREATE SOMETHING MEANINGFUL.`（`MEANINGFUL` 蓝色）
 - 段落：`目前开放 UI/UX、AI 产品与空间设计合作。聊聊你的想法？`
-- Email：`hello@zqw.design`（**占位，待用户确认**）
+- 邮箱 Email：`hello@zqw.design`（**占位，待用户确认**）
+- 微信 WeChat：`zqw_design`（**占位，待用户确认**）
+- QQ：`123456789`（**占位，待用户确认**）
+- 电话：`+86 138-0000-0000`（**占位，待用户确认**）
 - GitHub：`github.com/zqw`（**占位，待用户确认**）
 - 社交：Behance / 站酷 / 小红书（保留）
 - 页脚：`© 2026 ZQW · Designed & Built by ZQW`
@@ -181,7 +184,7 @@ Nav（吸顶毛玻璃）
 ## 7. 开放项（待用户提供/确认）
 
 1. 真实素材文件路径与命名（建议放 `public/images/`：`works/nuanshe.png`、`works/guale.png`、`works/spatial-*.jpg`、`archive/*.jpg`）
-2. 真实 Email、GitHub 链接
+2. 真实联系方式：邮箱、微信、QQ、电话、GitHub
 3. 真实经历时间线内容
 4. 项目详情链接（`VIEW PROJECT` 跳转目标）
 5. 社交平台链接（Behance / 站酷 / 小红书）
