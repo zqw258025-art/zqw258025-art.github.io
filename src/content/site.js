@@ -153,6 +153,7 @@ export const site = {
       { period: '2023 — 2025', title: '产品 / UI 设计师', note: '占位：待补充真实经历' },
       { period: '2021 — 2023', title: '视觉设计师', note: '占位：待补充真实经历' },
     ],
+    resumeCta: 'VIEW FULL RESUME',
     socials: [
       { label: 'Behance', href: '#' },
       { label: '站酷', href: '#' },
