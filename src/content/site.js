@@ -19,6 +19,7 @@ export const site = {
       { id: 'works', label: 'WORKS' },
       { id: 'lab', label: 'LAB' },
       { id: 'about', label: 'ABOUT' },
+      { id: 'resume', label: 'RESUME' },
       { id: 'contact', label: 'CONTACT' },
     ],
     cta: "LET'S TALK",
