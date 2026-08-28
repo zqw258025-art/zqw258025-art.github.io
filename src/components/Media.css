@@ -1,0 +1,25 @@
+.media-ph {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background: var(--accent-soft);
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+}
+.media-ph[data-ratio='landscape'] { aspect-ratio: 16 / 10; }
+.media-ph[data-ratio='portrait'] { aspect-ratio: 3 / 4; }
+.media-ph[data-fixed='h'] { aspect-ratio: auto; }
+.media-ph-label {
+  position: relative; z-index: 1;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em;
+  color: var(--muted); text-align: center; padding: 0 16px;
+}
+.media-ph-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--hairline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hairline) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.6;
+}
