@@ -1,0 +1,13 @@
+.archive-cats { margin: 32px 0 48px; display: flex; flex-wrap: wrap; gap: 10px; }
+.archive-cat {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  color: var(--muted); border: 1px solid var(--hairline-strong);
+  padding: 6px 14px; border-radius: 999px;
+}
+.archive-grid { columns: 3 300px; column-gap: 18px; }
+.archive-item-wrap { break-inside: avoid; margin-bottom: 18px; display: block; }
+.archive-item { border-radius: 10px; }
+.archive-item img { width: 100%; object-fit: cover; }
+@media (max-width: 1000px) {
+  .archive-grid { columns: 2 240px; }
+}
