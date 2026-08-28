@@ -53,7 +53,7 @@ Nav（吸顶毛玻璃）
 - 右上 CTA：`LET'S TALK ↗`
 
 ### 4.2 Hero
-- 顶部小字（等宽）：`张倩雯 ZHANG QIANWEN — UI/UX DESIGNER · AI PRODUCT DESIGNER · SPATIAL DESIGN`（**在此处加入中文全名**）
+- 顶部小字（等宽）：`张倩雯 ZHANG QIANWEN — UI/UX DESIGN · AI PRODUCT DESIGN · SPATIAL DESIGN`（**在此处加入中文全名**）
 - 巨型标题（杂志大字）：
   - `Hi, I'm ZQW.`（白底黑字）
   - `Design beyond the interface.`（`beyond the interface` 蓝色强调，可斜体）
@@ -105,10 +105,10 @@ Nav（吸顶毛玻璃）
 ## 5. 内容文案（草稿，待用户审阅）
 
 ### Hero
-- kicker：`张倩雯 ZHANG QIANWEN — UI/UX DESIGNER · AI PRODUCT DESIGNER · SPATIAL DESIGN`
+- kicker：`张倩雯 ZHANG QIANWEN — UI/UX DESIGN · AI PRODUCT DESIGN · SPATIAL DESIGN`
 - titleA：`Hi, I'm ZQW.`
 - titleB：`Design beyond the interface.`（强调 `beyond the interface`）
-- 段落：`我是张倩雯（ZQW），一名 UI/UX 设计师、AI 产品设计师与空间设计师。我相信设计的边界不止于屏幕——从界面、到空间、再到 AI 体验，让技术被感知，让产品被记住。`
+- 段落：`我是张倩雯（ZQW），拥有视觉传达与空间设计背景，目前专注探索 UI/UX Design、AI Product Design 与数字产品体验。`
 - CTA：`VIEW WORKS` / `ABOUT ME`
 - 滚动提示：`↓ 视觉作品 / 动态视觉`
 

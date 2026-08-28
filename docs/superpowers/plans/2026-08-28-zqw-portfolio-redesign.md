@@ -16,7 +16,7 @@
 - 版心 `--max-w: 1400px`（`container` 工具类沿用）
 - 语言：英文做结构标签（如 `02 / SELECTED WORKS`），中文做正文；不引入 i18n
 - 导航锚点固定为：`#works` `#lab` `#about` `#contact`（Hero 为 `#home`）
-- 中文全名「张倩雯」必须出现在 Hero kicker：`张倩雯 ZHANG QIANWEN — UI/UX DESIGNER · AI PRODUCT DESIGNER · SPATIAL DESIGN`
+- 中文全名「张倩雯」必须出现在 Hero kicker：`张倩雯 ZHANG QIANWEN — UI/UX DESIGN · AI PRODUCT DESIGN · SPATIAL DESIGN`
 - 联系板块必须有：邮箱 Email / 微信 WeChat / QQ / 电话（值当前为占位）
 - 图片素材为空（`src: ''`）时必须渲染浅蓝底占位块（等宽标签 `IMAGE — ...`），不得破版
 - 所有节区块标签用等宽小字，格式 `0n / NAME`（如 `01 / ABOUT`）
@@ -283,7 +283,7 @@ export const site = {
   name: 'ZQW',
   nameZh: '张倩雯',
   nameEn: 'ZHANG QIANWEN',
-  role: 'UI/UX Designer · AI Product Designer · Spatial Design',
+  role: 'UI/UX Design · AI Product Design · Spatial Design',
   email: 'hello@zqw.design',
   location: '中国',
   availability: '开放合作中',
@@ -301,12 +301,12 @@ export const site = {
 
   // —— 首页 Hero ——
   hero: {
-    kicker: '张倩雯 ZHANG QIANWEN — UI/UX DESIGNER · AI PRODUCT DESIGNER · SPATIAL DESIGN',
+    kicker: '张倩雯 ZHANG QIANWEN — UI/UX DESIGN · AI PRODUCT DESIGN · SPATIAL DESIGN',
     titleA: "Hi, I'm ZQW.",
     titleB: 'Design beyond the interface.',
     titleAccent: 'beyond the interface',
     paragraph:
-      '我是张倩雯（ZQW），一名 UI/UX 设计师、AI 产品设计师与空间设计师。我相信设计的边界不止于屏幕——从界面、到空间、再到 AI 体验，让技术被感知，让产品被记住。',
+      '我是张倩雯（ZQW），拥有视觉传达与空间设计背景，目前专注探索 UI/UX Design、AI Product Design 与数字产品体验。',
     ctaPrimary: 'VIEW WORKS',
     ctaSecondary: 'ABOUT ME',
     scrollHint: '↓ 视觉作品 / 动态视觉',
