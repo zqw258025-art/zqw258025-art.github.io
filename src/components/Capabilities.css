@@ -1,0 +1,23 @@
+.caps-grid {
+  margin-top: 64px;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+}
+.cap-item {
+  padding: 48px 36px;
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  transition: background 0.3s var(--ease-out);
+}
+.cap-item:hover { background: var(--accent-soft); }
+.cap-num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+.cap-en {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.6vw, 52px);
+  font-weight: 600; letter-spacing: -0.02em; margin-top: 18px;
+}
+.cap-zh { margin-top: 12px; color: var(--muted); font-size: 15px; }
+@media (max-width: 800px) {
+  .caps-grid { grid-template-columns: 1fr; }
+}
