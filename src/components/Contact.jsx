@@ -1,18 +1,13 @@
 import { site } from '../content/site'
 import Reveal from './Reveal'
+import { renderAccent } from '../lib/text'
 import './Contact.css'
 
 export default function Contact() {
-  const { contact, email, footer } = site
-  const accentIdx = contact.headingB.indexOf(contact.headingAccent)
+  const { contact, footer } = site
   return (
-    <section id="contact" className="contact grain">
-      <div className="contact-aurora" aria-hidden="true">
-        <span className="contact-blob contact-blob-1" />
-        <span className="contact-blob contact-blob-2" />
-      </div>
-
-      <div className="container contact-inner">
+    <section id="contact" className="section contact">
+      <div className="container">
         <Reveal>
           <p className="section-label">{contact.label}</p>
         </Reveal>
@@ -20,32 +15,44 @@ export default function Contact() {
           <h2 className="contact-title">
             {contact.headingA}
             <br />
-            <span className="gradient-text">
-              {contact.headingB.slice(0, accentIdx)}
-              {contact.headingAccent}
-              {contact.headingB.slice(accentIdx + contact.headingAccent.length)}
-            </span>
+            {renderAccent(contact.headingB, contact.headingAccent)}
           </h2>
         </Reveal>
-        <Reveal delay={160}>
+        <Reveal delay={140}>
           <p className="contact-para">{contact.paragraph}</p>
         </Reveal>
-        <Reveal delay={240}>
-          <a className="contact-mail" href={`mailto:${email}`}>
-            {email}
-            <span className="contact-mail-arrow">↗</span>
-          </a>
+        <Reveal delay={200}>
+          <div className="contact-methods">
+            {contact.methods.map((m) => {
+              const inner = (
+                <>
+                  <span className="contact-m-label">{m.label}</span>
+                  <span className="contact-m-value">
+                    {m.value}
+                    {m.href && <span className="contact-m-arrow">↗</span>}
+                  </span>
+                </>
+              )
+              return m.href ? (
+                <a
+                  className="contact-method"
+                  key={m.label}
+                  href={m.href}
+                  target={m.href.startsWith('http') ? '_blank' : undefined}
+                  rel="noreferrer"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div className="contact-method" key={m.label}>{inner}</div>
+              )
+            })}
+          </div>
         </Reveal>
-        <Reveal delay={320}>
+        <Reveal delay={260}>
           <div className="contact-socials">
             {contact.socials.map((s) => (
-              <a
-                className="contact-social"
-                key={s.label}
-                href={s.href}
-                target={s.href.startsWith('http') ? '_blank' : undefined}
-                rel="noreferrer"
-              >
+              <a className="contact-social" key={s.label} href={s.href} target="_blank" rel="noreferrer">
                 {s.label}
               </a>
             ))}
@@ -53,12 +60,13 @@ export default function Contact() {
         </Reveal>
       </div>
 
-      <footer className="contact-footer container">
-        <span className="contact-footer-line">{footer.line}</span>
-        <a className="contact-top" href="#home">
-          {footer.backToTop}
-          <span>↑</span>
-        </a>
+      <footer className="contact-footer">
+        <div className="container contact-footer-inner">
+          <span className="contact-footer-line">{footer.line}</span>
+          <a className="contact-top" href="#home">
+            {footer.backToTop} <span>↑</span>
+          </a>
+        </div>
       </footer>
     </section>
   )
