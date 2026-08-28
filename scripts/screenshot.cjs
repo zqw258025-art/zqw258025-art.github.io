@@ -53,10 +53,13 @@ async function waitForServer(url, timeoutMs = 30000) {
 
   // 依次滚动到各区块，等待 reveal 动画
   const sections = [
-    ['#about', '02-about.png'],
-    ['#works', '03-projects.png'],
-    ['#strengths', '04-strengths.png'],
-    ['#contact', '05-contact.png'],
+    ['#manifesto', '02-manifesto.png'],
+    ['#works', '03-works.png'],
+    ['#lab', '04-lab.png'],
+    ['#archive', '05-archive.png'],
+    ['#capabilities', '06-capabilities.png'],
+    ['#about', '07-about.png'],
+    ['#contact', '08-contact.png'],
   ];
   for (const [sel, file] of sections) {
     await page.locator(sel).scrollIntoViewIfNeeded();
