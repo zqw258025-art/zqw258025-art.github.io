@@ -13,7 +13,7 @@ export default function Nav() {
         </a>
 
         <nav className="nav-links" aria-label="主导航">
-          {nav.links.map((link, i) => {
+          {nav.links.map((link) => {
             const isRoute = link.id === 'resume'
             return (
               <a
@@ -29,7 +29,6 @@ export default function Nav() {
                     : undefined
                 }
               >
-                <span className="nav-link-index">0{i + 1}</span>
                 {link.label}
               </a>
             )

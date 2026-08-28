@@ -27,7 +27,6 @@
 }
 .nav-link:hover { color: var(--ink); }
 .nav-link:hover::after { width: 100%; }
-.nav-link-index { color: var(--accent); font-size: 10px; }
 
 .nav-cta {
   font-size: 13px; font-weight: 600; letter-spacing: 0.12em;
