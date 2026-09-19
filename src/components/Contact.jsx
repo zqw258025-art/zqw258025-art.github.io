@@ -9,53 +9,45 @@ export default function Contact() {
     <section id="contact" className="section contact">
       <div className="container">
         <Reveal>
-          <p className="section-label">{contact.label}</p>
-        </Reveal>
-        <Reveal delay={80}>
-          <h2 className="contact-title">
-            {contact.headingA}
-            <br />
-            {renderAccent(contact.headingB, contact.headingAccent)}
-          </h2>
-        </Reveal>
-        <Reveal delay={140}>
-          <p className="contact-para">{contact.paragraph}</p>
-        </Reveal>
-        <Reveal delay={200}>
-          <div className="contact-methods">
-            {contact.methods.map((m) => {
-              const inner = (
-                <>
-                  <span className="contact-m-label">{m.label}</span>
-                  <span className="contact-m-value">
-                    {m.value}
-                    {m.href && <span className="contact-m-arrow">↗</span>}
-                  </span>
-                </>
-              )
-              return m.href ? (
-                <a
-                  className="contact-method"
-                  key={m.label}
-                  href={m.href}
-                  target={m.href.startsWith('http') ? '_blank' : undefined}
-                  rel="noreferrer"
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div className="contact-method" key={m.label}>{inner}</div>
-              )
-            })}
-          </div>
-        </Reveal>
-        <Reveal delay={260}>
-          <div className="contact-socials">
-            {contact.socials.map((s) => (
-              <a className="contact-social" key={s.label} href={s.href} target="_blank" rel="noreferrer">
-                {s.label}
-              </a>
-            ))}
+          <div className="contact-card">
+            <div className="contact-cta">
+              <p className="section-label">{contact.label}</p>
+              <h2 className="contact-title">
+                {contact.headingA}
+                <br />
+                {renderAccent(contact.headingB, contact.headingAccent)}
+              </h2>
+              <p className="contact-para">{contact.paragraph}</p>
+            </div>
+
+            <div className="contact-panel">
+              <div className="contact-methods">
+                {contact.methods.map((m) => {
+                  const inner = (
+                    <>
+                      <span className="contact-m-label">{m.label}</span>
+                      <span className="contact-m-value">
+                        {m.value}
+                        {m.href && <span className="contact-m-arrow">↗</span>}
+                      </span>
+                    </>
+                  )
+                  return m.href ? (
+                    <a
+                      className="contact-method"
+                      key={m.label}
+                      href={m.href}
+                      target={m.href.startsWith('http') ? '_blank' : undefined}
+                      rel="noreferrer"
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    <div className="contact-method" key={m.label}>{inner}</div>
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>

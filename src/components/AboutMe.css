@@ -6,15 +6,6 @@
 .about-bio { font-size: 20px; line-height: 1.9; color: var(--ink-soft); max-width: 640px; }
 .about-bio + .about-bio { margin-top: 24px; }
 
-.about-socials { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 18px; }
-.about-social {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em;
-  color: var(--muted); border-bottom: 1px solid var(--hairline-strong);
-  padding-bottom: 4px; transition: color 0.3s, border-color 0.3s;
-}
-.about-social span { color: var(--accent); }
-.about-social:hover { color: var(--accent); border-color: var(--accent); }
-
 .about-timeline {
   position: relative; padding-left: 28px;
   border-left: 1px solid var(--hairline);
@@ -46,4 +37,22 @@
 
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; }
+}
+
+/* —— 方案B：圆形社交徽章 —— */
+.about-orb {
+  position: absolute; z-index: 2; pointer-events: none;
+  top: clamp(24px, 5vw, 64px); right: clamp(24px, 5vw, 72px);
+  width: clamp(100px, 12vw, 160px); height: clamp(100px, 12vw, 160px);
+  display: flex; align-items: center; justify-content: center;
+}
+.about-orb-svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: aboutSpin 24s linear infinite; }
+.about-orb-text {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
+  fill: var(--ink); text-transform: uppercase;
+}
+.about-orb-core { position: relative; font-family: var(--font-display); font-weight: 700; font-size: clamp(14px, 1.6vw, 20px); color: var(--ink); }
+@keyframes aboutSpin { to { transform: rotate(360deg); } }
+@media (max-width: 900px) {
+  .about-orb { display: none; }
 }

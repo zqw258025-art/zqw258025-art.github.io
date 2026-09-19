@@ -1,13 +1,58 @@
+.archive-note {
+  margin-top: 14px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+
 .archive-cats { margin: 32px 0 48px; display: flex; flex-wrap: wrap; gap: 10px; }
 .archive-cat {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
-  color: var(--muted); border: 1px solid var(--hairline-strong);
-  padding: 6px 14px; border-radius: 999px;
+  color: var(--ink); background: #fff; border: 1px solid var(--hairline-strong);
+  padding: 6px 14px; border-radius: 999px; text-transform: uppercase;
 }
-.archive-grid { columns: 3 300px; column-gap: 18px; }
-.archive-item-wrap { break-inside: avoid; margin-bottom: 18px; display: block; }
-.archive-item { border-radius: 10px; }
-.archive-item img { width: 100%; object-fit: cover; }
+/* 固定等宽网格：始终多列，方框不会撑满整行 */
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+.archive-item-wrap { display: block; }
+.archive-frame {
+  border: 3px solid var(--accent-warm);
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px -26px rgba(11, 11, 15, 0.5);
+}
+/* 方框内媒体：统一 4:3（图片/占位一致），圆角，填满宽度 */
+.archive-grid .archive-frame .archive-item {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  min-height: 0 !important;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* 框内不显示文字（文字统一挪到框下方） */
+.archive-item .media-ph-label { display: none; }
+.archive-caption {
+  display: block; margin-top: 10px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink);
+}
 @media (max-width: 1000px) {
-  .archive-grid { columns: 2 240px; }
+  .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+}
+@media (max-width: 420px) {
+  .archive-grid { gap: 12px; }
+  .archive-caption { font-size: 10px; letter-spacing: 0.1em; }
+}
+/* 竖版 / 需要完整显示的作品（如标志）：contain，不裁切 */
+.archive-grid .archive-frame .archive-item.is-contain {
+  object-fit: contain;
+  background: #fff;
+  padding: 12px;
 }

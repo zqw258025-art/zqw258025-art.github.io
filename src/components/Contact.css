@@ -1,56 +1,75 @@
 .contact { padding-bottom: 0; }
+
+/* 黄 → 珊瑚红 渐变 CTA 卡片 */
+.contact-card {
+  display: grid; grid-template-columns: 1.08fr 1fr;
+  border-radius: 28px; overflow: hidden;
+  box-shadow: 0 30px 70px -38px rgba(11, 11, 15, 0.42);
+}
+
+.contact-cta {
+  background: linear-gradient(135deg, #ffe45c 0%, var(--accent-warm) 100%);
+  padding: clamp(40px, 6vw, 76px);
+  color: var(--ink);
+}
+.contact-cta .section-label { color: var(--ink-soft); }
+.contact-cta .section-label::before { background: var(--ink); }
+
 .contact-title {
   font-family: var(--font-display);
-  font-size: clamp(44px, 6.5vw, 96px);
-  font-weight: 600; letter-spacing: -0.03em; line-height: 1.05;
-  margin-top: 24px;
+  font-size: clamp(40px, 6vw, 88px);
+  font-weight: 700; letter-spacing: -0.03em; line-height: 1.05;
+  margin-top: 24px; color: var(--ink);
 }
-.contact-para { margin-top: 28px; color: var(--muted); font-size: 17px; max-width: 560px; }
+/* 关键字用手写体 */
+.contact-title .text-accent {
+  font-family: var(--font-script);
+  font-weight: 500; letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.contact-para { margin-top: 26px; color: var(--ink-soft); font-size: 17px; max-width: 460px; }
 
-.contact-methods {
-  margin-top: 64px;
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
+.contact-panel {
+  background: linear-gradient(135deg, var(--accent-coral) 0%, #ff7a5c 100%);
+  padding: clamp(40px, 6vw, 76px);
+  color: #fff;
+  display: flex; flex-direction: column; justify-content: center; gap: 30px;
 }
+
+.contact-methods { display: flex; flex-direction: column; }
 .contact-method {
-  display: block; padding: 32px 28px;
-  border-right: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  transition: background 0.3s var(--ease-out);
+  display: block; padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  transition: padding-left 0.3s var(--ease-out);
 }
-.contact-method:hover { background: var(--accent-soft); }
-.contact-m-label {
-  display: block;
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
-  color: var(--muted);
-}
-.contact-m-value {
-  display: inline-flex; align-items: center; gap: 8px;
-  margin-top: 14px; font-size: 20px; font-weight: 600; color: var(--ink);
-  transition: color 0.3s;
-}
-.contact-m-arrow { color: var(--accent); }
-.contact-method:hover .contact-m-value { color: var(--accent); }
-
-.contact-socials { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 26px; }
-.contact-social {
-  font-size: 14px; color: var(--ink-soft);
-  border-bottom: 1px solid var(--hairline-strong); padding-bottom: 4px;
-  transition: color 0.3s, border-color 0.3s;
-}
-.contact-social:hover { color: var(--accent); border-color: var(--accent); }
+.contact-method:last-child { border-bottom: none; }
+.contact-method:hover { padding-left: 8px; }
+.contact-m-label { display: block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; color: rgba(255, 255, 255, 0.78); }
+.contact-m-value { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 20px; font-weight: 600; color: #fff; }
+.contact-m-arrow { color: #fff; }
+.contact-method:hover .contact-m-value { color: #fff; }
 
 .contact-footer { margin-top: 96px; border-top: 1px solid var(--hairline); padding: 28px 0; }
-.contact-footer-inner {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 16px; flex-wrap: wrap;
-}
+.contact-footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .contact-footer-line { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); }
 .contact-top { font-size: 13px; color: var(--ink); border-bottom: 1px solid var(--hairline-strong); padding-bottom: 3px; }
 .contact-top span { color: var(--accent); }
 .contact-top:hover { color: var(--accent); }
 
-@media (max-width: 800px) {
-  .contact-methods { grid-template-columns: 1fr; }
+@media (max-width: 860px) {
+  .contact-card { grid-template-columns: 1fr; }
+  .contact-cta { padding: 40px 28px; }
+  .contact-panel { padding: 40px 28px; }
 }
+/* —— 深墨页脚 —— */
+.contact-footer {
+  background: var(--band-ink);
+  color: #fff;
+  border-top: none;
+  margin-top: 104px;
+}
+.contact-footer-inner { color: #fff; }
+.contact-footer-line { color: rgba(255, 255, 255, 0.66); }
+.contact-top { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.45); }
+.contact-top span { color: var(--accent-warm); }
+.contact-top:hover { color: var(--accent-warm); }

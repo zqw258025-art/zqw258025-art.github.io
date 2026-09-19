@@ -18,18 +18,29 @@ export default function DesignLab() {
         </Reveal>
 
         <div className="lab-list">
-          {lab.items.map((item) => (
-            <Reveal key={item.index} className="lab-item-wrap" delay={0}>
-              <a className="lab-item" href={item.link}>
+          {lab.items.map((item) => {
+            const inner = (
+              <>
                 <div className="lab-item-top">
-                  <span className="lab-tag">LAB / {item.index}</span>
-                  <span className="lab-arrow">↗</span>
+                  <span className="lab-tag">PROCESS / {item.index}</span>
+                  {item.link ? <span className="lab-arrow">↗</span> : null}
                 </div>
                 <h3 className="lab-title">{item.title}</h3>
                 <p className="lab-zh">{item.zh}</p>
-              </a>
-            </Reveal>
-          ))}
+              </>
+            )
+            return (
+              <Reveal key={item.index} className="lab-item-wrap" delay={0}>
+                {item.link ? (
+                  <a className="lab-item" href={item.link} target="_blank" rel="noreferrer">
+                    {inner}
+                  </a>
+                ) : (
+                  <div className="lab-item">{inner}</div>
+                )}
+              </Reveal>
+            )
+          })}
         </div>
       </div>
     </section>

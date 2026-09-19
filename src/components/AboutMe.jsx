@@ -17,20 +17,20 @@ export default function AboutMe() {
 
         <div className="about-grid">
           <div className="about-left">
+            <div className="about-orb" aria-hidden="true">
+              <svg viewBox="0 0 120 120" className="about-orb-svg">
+                <defs><path id="aboutOrb" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs>
+                <text className="about-orb-text">
+                  <textPath href="#aboutOrb" startOffset="0">UI/UX · AI PRODUCT · SPATIAL · 3D ·</textPath>
+                </text>
+              </svg>
+              <span className="about-orb-core">ZQW</span>
+            </div>
             {aboutMe.bio.map((p, i) => (
               <Reveal key={i} delay={i * 60}>
                 <p className="about-bio">{p}</p>
               </Reveal>
             ))}
-            <Reveal delay={140}>
-              <div className="about-socials">
-                {aboutMe.socials.map((s) => (
-                  <a className="about-social" key={s.label} href={s.href} target="_blank" rel="noreferrer">
-                    {s.label} <span>↗</span>
-                  </a>
-                ))}
-              </div>
-            </Reveal>
           </div>
 
           <div className="about-right">

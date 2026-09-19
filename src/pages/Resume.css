@@ -53,16 +53,71 @@
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 600; letter-spacing: -0.02em;
 }
-.resume-placeholder {
-  margin-top: 28px;
-  min-height: 120px;
-  display: grid; place-items: center;
-  border: 1px dashed var(--hairline-strong);
-  border-radius: 12px;
-  background: var(--accent-soft);
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em;
-  color: var(--muted);
+.resume-objective {
+  margin-top: 16px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
+  color: var(--accent);
 }
+
+/* 内容块 */
+.resume-profile {
+  margin-top: 32px;
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px;
+}
+.resume-block-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
+.resume-text { margin-top: 14px; color: var(--ink-soft); font-size: 15px; line-height: 1.9; }
+
+.resume-basics { border-top: 1px solid var(--hairline); align-self: start; }
+.resume-basic {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  padding: 12px 0; border-bottom: 1px solid var(--hairline);
+}
+.resume-basic-label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  color: var(--muted); text-transform: uppercase;
+}
+.resume-basic-value { font-size: 14px; color: var(--ink); }
+a.resume-basic-value:hover { color: var(--accent); }
+.resume-basics-wide { margin-top: 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; }
+
+.resume-entries { margin-top: 32px; }
+.resume-entry {
+  display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px;
+  padding: 28px 0; border-top: 1px solid var(--hairline);
+}
+.resume-entry-period {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+  color: var(--accent); text-transform: uppercase;
+}
+.resume-entry-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; }
+.resume-entry-role { margin-top: 4px; font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+.resume-list { margin-top: 14px; display: grid; gap: 8px; }
+.resume-list li { position: relative; padding-left: 18px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.resume-list li::before {
+  content: ''; position: absolute; left: 0; top: 11px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent-warm);
+}
+
+.resume-caps { margin-top: 32px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.resume-cap { padding: 22px; border: 1px solid var(--hairline-strong); border-radius: 20px; background: #fff; }
+.resume-cap-en { font-family: var(--font-display); font-size: 18px; font-weight: 700; letter-spacing: 0.02em; }
+.resume-cap-zh { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+.resume-tools { margin-top: 32px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.resume-tool { padding: 20px; border: 1px solid var(--hairline); border-radius: 20px; background: #fff; }
+.resume-tool-name { display: block; font-family: var(--font-display); font-size: 16px; font-weight: 700; }
+.resume-tool-note {
+  display: block; margin-top: 6px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted);
+}
+
+.resume-project-link {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em;
+  color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 3px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.resume-project-link:hover { color: var(--ink); border-color: var(--ink); }
 
 /* Footer */
 .resume-footer { border-top: 1px solid var(--hairline); padding: 28px 0; }
@@ -73,4 +128,7 @@
   .resume-container { width: min(1080px, 100% - 40px); }
   .resume-brand-zh { display: none; }
   .resume-back { font-size: 10px; letter-spacing: 0.12em; }
+  .resume-profile { grid-template-columns: 1fr; gap: 28px; }
+  .resume-entry { grid-template-columns: 1fr; gap: 10px; }
+  .resume-caps, .resume-tools, .resume-basics-wide { grid-template-columns: 1fr; }
 }

@@ -2,6 +2,8 @@ import { site } from '../content/site'
 import Reveal from './Reveal'
 import './Capabilities.css'
 
+const ICONS = ['◻', '✦', '●', '◇']
+
 export default function Capabilities() {
   const { capabilities } = site
   return (
@@ -17,7 +19,8 @@ export default function Capabilities() {
         <div className="caps-grid">
           {capabilities.items.map((item, i) => (
             <Reveal key={item.index} className="cap-wrap" delay={i * 80}>
-              <div className="cap-item">
+              <div className="cap-card">
+                <span className={`cap-icon cap-icon-${i}`} aria-hidden="true">{ICONS[i % ICONS.length]}</span>
                 <span className="cap-num">{item.index}</span>
                 <h3 className="cap-en">{item.en}</h3>
                 <p className="cap-zh">{item.zh}</p>

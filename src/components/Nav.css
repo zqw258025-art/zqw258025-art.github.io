@@ -1,7 +1,7 @@
 .nav {
   position: sticky; top: 0; z-index: 50;
   height: var(--nav-h);
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(199, 225, 248, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--hairline);
@@ -30,11 +30,11 @@
 
 .nav-cta {
   font-size: 13px; font-weight: 600; letter-spacing: 0.12em;
-  color: var(--accent); border: 1px solid var(--accent);
+  color: var(--ink); border: 1px solid var(--ink);
   padding: 9px 18px; border-radius: 999px;
   transition: background 0.3s, color 0.3s;
 }
-.nav-cta:hover { background: var(--accent); color: #fff; }
+.nav-cta:hover { background: var(--accent-warm); color: var(--ink); border-color: var(--ink); }
 
 @media (max-width: 760px) {
   .nav-brand-zh, .nav-links { display: none; }

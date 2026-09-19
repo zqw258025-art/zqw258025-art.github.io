@@ -4,7 +4,13 @@ import '@fontsource-variable/space-grotesk'
 import '@fontsource-variable/jetbrains-mono'
 import App from './App'
 import Resume from './pages/Resume'
+import WorkSpatial from './pages/WorkSpatial'
 import './styles/global.css'
+
+const ROUTES = {
+  '/resume': Resume,
+  '/works/spatial': WorkSpatial,
+}
 
 function RouteView() {
   const [path, setPath] = React.useState(window.location.pathname)
@@ -18,7 +24,8 @@ function RouteView() {
     return () => window.removeEventListener('popstate', onPop)
   }, [])
 
-  return path === '/resume' ? <Resume /> : <App />
+  const Page = ROUTES[path]
+  return Page ? <Page /> : <App />
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
