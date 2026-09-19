@@ -12,12 +12,19 @@ const ROUTES = {
   '/works/spatial': WorkSpatial,
 }
 
+// 统一路径（去尾斜杠），保证 /resume 与 /resume/ 都能正确匹配
+function normalizePath(p) {
+  if (!p) return '/'
+  const trimmed = p.replace(/\/+$/, '')
+  return trimmed === '' ? '/' : trimmed
+}
+
 function RouteView() {
-  const [path, setPath] = React.useState(window.location.pathname)
+  const [path, setPath] = React.useState(normalizePath(window.location.pathname))
 
   React.useEffect(() => {
     const onPop = () => {
-      setPath(window.location.pathname)
+      setPath(normalizePath(window.location.pathname))
       window.scrollTo(0, 0)
     }
     window.addEventListener('popstate', onPop)

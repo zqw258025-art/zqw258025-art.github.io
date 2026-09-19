@@ -41,9 +41,12 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: SPA fallback + nojekyll
+      - name: SPA routes + 404 fallback
         run: |
           cp dist/index.html dist/404.html
+          mkdir -p dist/resume dist/works/spatial
+          cp dist/index.html dist/resume/index.html
+          cp dist/index.html dist/works/spatial/index.html
           touch dist/.nojekyll
 
       - name: Upload Pages artifact
